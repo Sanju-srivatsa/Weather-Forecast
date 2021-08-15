@@ -1,3 +1,6 @@
+// https://api.openweathermap.org/data/2.5/weather?lat=55.755826&lon=37.6173&appid=6b15b60da310b5a09fbfd4351e46974f
+
+//Select Elements
 const  iconElement = document.querySelector('.weather-icon');
 const  tempElement = document.querySelector('.temperature-value p');
 const  descElement = document.querySelector('.temperature-description p');
@@ -10,6 +13,8 @@ const weather = {}
 weather.temperature ={
   unit : "celsius"
 }
+
+//APP CONSTS AND VARS
 const KELVIN = 273;
 //API key
 const key = "6b15b60da310b5a09fbfd4351e46974f";  
@@ -21,7 +26,7 @@ if('geolocation' in navigator){
   notificationElement.innerHTML = "<p>Browser doesn't Support Geolocation</p>"
 }
 
-// USER'S POSITION
+//set USER'S POSITION
 function setPosition(position){
   let latitude = position.coords.latitude;
   let longitude = position.coords.longitude; 
@@ -35,7 +40,7 @@ function showError(error){
   notificationElement.innerHTML = `<p> ${error.message}</p>`;
 }
 
-//Weather Details from API Server
+//Get weather from api server
 function  getWeather(latitude, longitude){
   let api = `https://api.openweathermap.org/data/2.5/weather?lat=${latitude}&lon=${longitude}&appid=${key}`;
 
@@ -58,7 +63,7 @@ function  getWeather(latitude, longitude){
 
 //Display Weather to UI
 function displayWeather(){
-iconElement.innerHTML = `<img src="icons/${weather.iconId}.png"/>`;
+iconElement.innerHTML = `<img src="https://openweathermap.org/img/wn/${weather.iconId}@4x.png"/>`;
 tempElement.innerHTML = `${weather.temperature.value}°<span>C</span>`;
 descElement.innerHTML = weather.description;
 locationElement.innerHTML = `${weather.city}, ${weather.country}`
@@ -83,4 +88,4 @@ tempElement.addEventListener("click",function(){
         tempElement.innerHTML = `${weather.temperature.value}°<span>C</span>`;
         weather.temperature.unit = 'celsius';
   }
-})
+});
