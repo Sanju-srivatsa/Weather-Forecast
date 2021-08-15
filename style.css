@@ -5,19 +5,20 @@ background: url('https://free4kwallpapers.com/uploads/originals/2019/02/21/the-w
         -webkit-background-size: cover;
         -o-background-size: cover;
         background-size: cover;
-font-family: cursive;
+font-family: fantasy;
 }
 
 .container{
   width: 500px;
 	background: rgba(255, 255, 255, .02);
-	-webkit-backdrop-filter: blur(5px);
-	backdrop-filter: blur(5px);
+	-webkit-backdrop-filter: blur(2px);
+	backdrop-filter: blur(2px);
   display: block;
   margin: 0 auto;
   border-radius: 30px;
   padding-bottom: 50px;
   margin-top: 150px;
+  border: outset 0.1px rgba(255, 255, 255, .4)
 }
 
 .app-title{
@@ -52,15 +53,17 @@ font-family: cursive;
 
 .weather-container{
   width: 100%;
-  height: 260px;
+  height: 300px;
 	background: rgba(255, 255, 255, .3);
 	-webkit-backdrop-filter: blur(10px);
 	backdrop-filter: blur(5px);
+  border-radius: 5px;
 }
 
 .weather-icon{
   width: 100%;
-  height: 128px;
+  height: 138px;
+  margin-bottom: 10px;
 }
 
 .weather-icon img{
@@ -98,9 +101,10 @@ font-size: 0.5em;
 }
 
 .location p{
-  padding: 0;
+  padding-bottom: 10px;
+  height: 30px;
   margin: 0;
   color: #293251;
-  font-size: 1em;
+  font-size: 2em;
   text-align: center;
 }
